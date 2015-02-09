@@ -11,7 +11,7 @@ class dev_tools(ShutItModule):
 		return shutit.file_exists('/root/shutit_build/module_record/' + self.module_id + '/built')
 
 	def build(self, shutit):
-		shutit.install('vim python-pip curl jq git apt-file git net-tools nmap sshfs graphviz alien moreutils telnet adduser athena-jot build-essential iotop strace tcpdump iproute ltrace lsof manpages man-db mlocate subversion cvs sysstat httptop tcl tmux tree unzip zip util-linux whois wget xclip xterm')
+		shutit.install('vim python-pip curl jq git apt-file git net-tools nmap sshfs graphviz alien moreutils telnet adduser athena-jot build-essential iotop strace tcpdump iproute ltrace lsof manpages man-db mlocate subversion cvs sysstat tcl tmux tree unzip zip util-linux whois wget xclip xterm')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
 		shutit.login(user='imiell')
