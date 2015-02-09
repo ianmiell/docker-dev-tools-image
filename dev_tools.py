@@ -17,7 +17,7 @@ class dev_tools(ShutItModule):
 		shutit.login(user='imiell')
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
-		shutit.send('script/bootstrap')
+		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','':'ian.miell@gmail.com'})
 		return True
 
 	#def get_config(self, shutit):
