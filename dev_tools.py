@@ -12,7 +12,7 @@ class dev_tools(ShutItModule):
 
 	def build(self, shutit):
 		shutit.install('vim python-pip curl jq git apt-file git net-tools nmap')
-        shutit.send('groupadd -g 1000 imiell')
+		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
 		shutit.login(user='imiell')
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
