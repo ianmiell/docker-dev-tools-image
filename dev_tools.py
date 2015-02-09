@@ -18,7 +18,7 @@ class dev_tools(ShutItModule):
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
 		# TODO other git repos
-		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','':'ian.miell@gmail.com'})
+		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com'})
 		shutit.logout()
 		shutit.install('vim python-pip curl jq git apt-file git net-tools nmap sshfs graphviz alien moreutils telnet adduser athena-jot build-essential iotop strace tcpdump iproute ltrace lsof manpages man-db mlocate subversion cvs sysstat tcl tmux tree unzip zip util-linux whois wget xclip xterm xmlstarlet ansible ant ascii asciidoc eatmydata erlang virtualenv socat xdotool inotify_tools screen haproxy golang xmlto rsync')
 		return True
