@@ -7,7 +7,9 @@ RUN git clone https://github.com/ianmiell/shutit.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-WORKDIR /space/git/docker-dev-tools-image <- TODO You will likely need to to change this
+WORKDIR /space/git
+RUN git clone https://github.com/ianmiell/docker-dev-tools-image.git
+WORKDIR /space/git/docker-dev-tools-image
 RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
 
 CMD ["/bin/bash"] 
