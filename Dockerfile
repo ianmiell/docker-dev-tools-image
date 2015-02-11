@@ -12,4 +12,6 @@ RUN git clone https://github.com/ianmiell/docker-dev-tools-image.git #
 WORKDIR /space/git/docker-dev-tools-image
 RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
 
+USER imiell
+
 CMD ["/bin/bash"] 
