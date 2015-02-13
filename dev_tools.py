@@ -77,7 +77,7 @@ class dev_tools(ShutItModule):
 		shutit.install('at')
 		shutit.install('coreutils')
 		shutit.install('cron')
-		shutit.install('errno')
+		#shutit.install('errno')
 		shutit.install('ehterape')
 		shutit.install('ddd')
 		shutit.install('expect')
