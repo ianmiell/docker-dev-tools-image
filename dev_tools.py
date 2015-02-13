@@ -7,6 +7,7 @@ from shutit_module import ShutItModule
 class dev_tools(ShutItModule):
 
 	def build(self, shutit):
+		# git
 		shutit.install('git')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
@@ -77,10 +78,8 @@ class dev_tools(ShutItModule):
 		shutit.install('at')
 		shutit.install('coreutils')
 		shutit.install('cron')
-		#shutit.install('errno')
-		shutit.install('ehterape')
 		shutit.install('ddd')
-		shutit.install('expect')
+		shutit.install('expect-dev expect expect-lite')
 		shutit.install('openssh-client')
 		shutit.install('openssh-server')
 		shutit.install('openssl')
@@ -90,90 +89,48 @@ class dev_tools(ShutItModule):
 		shutit.install('perl-doc')
 		shutit.install('perl-modules')
 		shutit.install('sed')
-
-## Packages to install when getting a new machine:
-#
-#sudo apt-get install -y abs-guide
-#sudo apt-get install -y anacron
-#sudo apt-get install -y apt-show-versions
-#sudo apt-get install -y apt-transport-https
-#sudo apt-get install -y apt-utils
-#sudo apt-get install -y apt-file
-#sudo apt-get install -y aptsh
-#sudo apt-get install -y bashdb
-#sudo apt-get install -y daemon
-#sudo apt-get install -y dwww
-#sudo apt-get install -y etherape
-#sudo apt-get install -y expect-dev
-#sudo apt-get install -y expect-lite
-#sudo apt-get install -y fluxbox
-#sudo apt-get install -y fslint
-#sudo apt-get install -y gocr
-#sudo apt-get install -y god
-#sudo apt-get install -y lsb-base
-#sudo apt-get install -y lsb-release
-#sudo apt-get install -y lshw
-#sudo apt-get install -y markdown
-#sudo apt-get install -y maven
-#sudo apt-get install -y mssh
-#sudo apt-get install -y ncurses-base
-#sudo apt-get install -y ncurses-bin
-#sudo apt-get install -y netpipe-tcp
-#sudo apt-get install -y netsed
-#sudo apt-get install -y netsniff-ng
-#sudo apt-get install -y openjdk-6-jdk
-#sudo apt-get install -y openjdk-6-jre
-#sudo apt-get install -y openjdk-6-jre-headless
-#sudo apt-get install -y openjdk-6-jre-lib
-#sudo apt-get install -y openprinting-ppds
-#sudo apt-get install -y oracle-java7-installer
-#sudo apt-get install -y parted
-#sudo apt-get install -y partitionmanager
-#sudo apt-get install -y pass
-#sudo apt-get install -y pkg-config
-#sudo apt-get install -y postgresql-client
-#sudo apt-get install -y postgresql-client-9.1
-#sudo apt-get install -y postgresql-client-common
-#sudo apt-get install -y procps
-#sudo apt-get install -y qt-at-spi
-#sudo apt-get install -y rdesktop
-#sudo apt-get install -y readline-common
-#sudo apt-get install -y rekonq
-#sudo apt-get install -y resolvconf
-#sudo apt-get install -y rhino
-#sudo apt-get install -y rlwrap
-#sudo apt-get install -y rpcbind
-#sudo apt-get install -y rsyslog
-#sudo apt-get install -y rtkit
-#sudo apt-get install -y sec
-#sudo apt-get install -y sensible-utils
-#sudo apt-get install -y software-properties-common
-#sudo apt-get install -y ssh-import-id
-#sudo apt-get install -y ssl-cert
-#sudo apt-get install -y sudo
-#sudo apt-get install -y syslinux
-#sudo apt-get install -y syslinux-common
-#sudo apt-get install -y syslinux-legacy
-#sudo apt-get install -y tcpd
-#sudo apt-get install -y time
-#sudo apt-get install -y tofrodos
-#sudo apt-get install -y toshset
-#sudo apt-get install -y tree
-#sudo apt-get install -y unattended-upgrades
-#sudo apt-get install -y watershed
-#sudo apt-get install -y whiptail
-#sudo apt-get install -y xchm
-#sudo apt-get install -y xml-core
-#sudo apt-get install -y python-sphinx
-
+		shutit.install('anacron')
+		shutit.install('apt-file')
+		shutit.install('mssh')
+		shutit.install('bashdb')
+		shutit.install('daemon')
+		shutit.install('fslint')
+		shutit.install('gocr')
+		shutit.install('netpipe-tcp')
+		shutit.install('netsed')
+		shutit.install('netsniff-ng')
+		shutit.install('pkg-config')
+		shutit.install('procps')
+		shutit.install('sudo')
+		shutit.install('tcpd')
+		shutit.install('time')
+		shutit.install('tree')
+		shutit.install('tofrodos')
+		shutit.install('sec')
+		shutit.install('rhino')
+		shutit.install('resolvconf')
+		shutit.install('postgresql-client')
+		shutit.install('openjdk-6-jre')
+		shutit.install('maven')
+		shutit.install('lsb-base')
+		shutit.install('lsb-release')
+		shutit.install('apt-show-versions')
+		shutit.install('apt-utils')
+		shutit.install('readline-common')
+		shutit.install('rlwrap')
+		shutit.install('software-properties-common')
+		shutit.install('ssh-import-id')
+		shutit.install('ncurses-base')
+		shutit.install('ncurses-bin')
 		return True
 
-	#def get_config(self, shutit):
-	#	shutit.get_config(self.module_id,'item','default')
-	#	return True
+	def get_config(self, shutit):
+		shutit.get_config(self.module_id,'type','monolith')
+		return True
 
 	def finalize(self, shutit):
 		shutit.send('updatedb')
+		shutit.send('apt-file update')
 		return True
 
 def module():
