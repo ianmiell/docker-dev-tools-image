@@ -92,7 +92,7 @@ class dev_tools(ShutItModule):
 		shutit.install('anacron')
 		shutit.install('apt-file')
 		shutit.install('mssh')
-		shutit.install('bashdb')
+		#shutit.install('bashdb')
 		shutit.install('daemon')
 		shutit.install('fslint')
 		shutit.install('gocr')
