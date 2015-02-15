@@ -79,7 +79,7 @@ class dev_tools(ShutItModule):
 		shutit.install('coreutils')
 		shutit.install('cron')
 		shutit.install('ddd')
-		shutit.install('expect-dev expect expect-lite')
+		shutit.install('expect-dev expect')
 		shutit.install('openssh-client')
 		shutit.install('openssh-server')
 		shutit.install('openssl')
@@ -122,6 +122,7 @@ class dev_tools(ShutItModule):
 		shutit.install('ssh-import-id')
 		shutit.install('ncurses-base')
 		shutit.install('ncurses-bin')
+		shutit.install('tcpflow')
 		return True
 
 	def get_config(self, shutit):
