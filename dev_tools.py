@@ -108,7 +108,7 @@ class dev_tools(ShutItModule):
 		shutit.install('tofrodos')
 		shutit.install('sec')
 		shutit.install('rhino')
-		shutit.install('resolvconf')
+		#shutit.install('resolvconf')
 		shutit.install('postgresql-client')
 		shutit.install('openjdk-6-jre')
 		shutit.install('maven')
