@@ -111,7 +111,6 @@ class dev_tools(ShutItModule):
 		shutit.install('maven')
 		shutit.install('lsb-base')
 		shutit.install('lsb-release')
-		shutit.install('apt-show-versions')
 		shutit.install('apt-utils')
 		shutit.install('readline-common')
 		shutit.install('rlwrap')
