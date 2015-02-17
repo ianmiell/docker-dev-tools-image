@@ -110,7 +110,6 @@ class dev_tools(ShutItModule):
 		shutit.install('rhino')
 		shutit.install('resolvconf')
 		shutit.install('postgresql-client')
-		shutit.install('openjdk-6-jre')
 		shutit.install('maven')
 		shutit.install('lsb-base')
 		shutit.install('lsb-release')
@@ -119,10 +118,15 @@ class dev_tools(ShutItModule):
 		shutit.install('readline-common')
 		shutit.install('rlwrap')
 		shutit.install('software-properties-common')
-		shutit.install('ssh-import-id')
 		shutit.install('ncurses-base')
 		shutit.install('ncurses-bin')
 		shutit.install('tcpflow')
+		# CPAN
+		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
+		# CPAN requires a re-login
+		shutit.login(command='su - root')
+		shutit.send('cpan install Graph-Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
+		shutit.logout()
 		return True
 
 	def get_config(self, shutit):
@@ -132,6 +136,7 @@ class dev_tools(ShutItModule):
 	def finalize(self, shutit):
 		shutit.send('updatedb')
 		shutit.send('apt-file update')
+		shutit.send('apt-get clean')
 		return True
 
 def module():
