@@ -45,7 +45,6 @@ Landscape-Client==14.12
 langtable==0.0.13
 lockfile==0.8
 logilab-common==0.61.0
-lxml==3.2.1
 lxml==3.3.3
 M2Crypto==0.21.1
 manhole==1.0.0
