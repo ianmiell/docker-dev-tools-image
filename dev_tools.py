@@ -92,7 +92,6 @@ class dev_tools(ShutItModule):
 		shutit.install('anacron')
 		shutit.install('apt-file')
 		shutit.install('mssh')
-		#shutit.install('bashdb')
 		shutit.install('daemon')
 		shutit.install('fslint')
 		shutit.install('gocr')
@@ -108,7 +107,6 @@ class dev_tools(ShutItModule):
 		shutit.install('tofrodos')
 		shutit.install('sec')
 		shutit.install('rhino')
-		#shutit.install('resolvconf')
 		shutit.install('postgresql-client')
 		shutit.install('maven')
 		shutit.install('lsb-base')
@@ -124,7 +122,7 @@ class dev_tools(ShutItModule):
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
 		# CPAN requires a re-login
-		shutit.login(command='su - root')
+		shutit.login(command='su -')
 		shutit.send('cpan install Graph-Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
 		shutit.logout()
 		return True
