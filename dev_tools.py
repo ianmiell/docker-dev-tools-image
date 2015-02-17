@@ -125,6 +125,10 @@ class dev_tools(ShutItModule):
 		shutit.login(command='su -')
 		shutit.send('cpan install Graph-Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
 		shutit.logout()
+		# pips
+		shutit.send_host_file('context/requirements.txt','/tmp/requirements.txt')
+		shutit.send('pip install -r /tmp/requirements.txt')
+		shutit.send('rm -f /tmp/requirements.txt')
 		return True
 
 	def get_config(self, shutit):
