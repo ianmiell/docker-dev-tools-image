@@ -1,4 +1,3 @@
-adium-theme-ubuntu==0.3.4
 apt-xapian-index==0.45
 backports.ssl-match-hostname==3.4.0.2
 blivet==0.18.34
@@ -45,7 +44,6 @@ Landscape-Client==14.12
 langtable==0.0.13
 lockfile==0.8
 logilab-common==0.61.0
-lxml==3.2.1
 lxml==3.3.3
 M2Crypto==0.21.1
 manhole==1.0.0
@@ -79,10 +77,8 @@ pyparsing==1.5.6
 pyparted==3.9
 pyserial==2.6
 pysmbc==1.0.14.1
-python-apt==0.9.3.5ubuntu1
 python-augeas==0.4.1
 python-dateutil==1.5
-python-debian==0.1.21-nmu2ubuntu2
 python-default-encoding==0.1
 python-ldap==2.4.6
 python-meh==0.25
