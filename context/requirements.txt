@@ -1,14 +1,10 @@
-apt-xapian-index==0.45
 backports.ssl-match-hostname==3.4.0.2
 blivet==0.18.34
 bottle==0.12.8
 Brlapi==0.6.0
-buildbot==0.8.8
-buildbot-slave==0.8.8
 charade==1.0.3
 chardet==2.0.1
 colorama==0.2.5
-command-not-found==0.3
 configobj==4.7.2
 configshell-fb==1.1.11
 coverage==3.6b3
