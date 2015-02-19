@@ -1,5 +1,4 @@
 backports.ssl-match-hostname==3.4.0.2
-blivet==0.18.34
 bottle==0.12.8
 Brlapi==0.6.0
 charade==1.0.3
