@@ -2,6 +2,7 @@
 """
 
 from shutit_module import ShutItModule
+import string
 
 
 class dev_tools(ShutItModule):
