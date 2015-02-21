@@ -21,13 +21,11 @@ class dev_tools(ShutItModule):
 		packages = set()
 		packages.add('vim')
 		packages.add('vim-common')
-		packages.add('vim-doc')
 		packages.add('python-pip')
-		packages.add('python-dev')
 		packages.add('curl')
 		packages.add('net-tools')
 		packages.add('nmap')
-		packages.add('socat') # network tools
+		packages.add('socat')
 		packages.add('jq')
 		packages.add('git')
 		packages.add('git-man')
@@ -93,7 +91,6 @@ class dev_tools(ShutItModule):
 		packages.add('patch')
 		packages.add('perl')
 		packages.add('perl-base')
-		packages.add('perl-doc')
 		packages.add('perl-modules')
 		packages.add('sed')
 		packages.add('anacron')
@@ -124,7 +121,8 @@ class dev_tools(ShutItModule):
 		packages.add('ncurses-bin')
 		packages.add('tcpflow')
 		packages.add('mitmproxy') #ssl-capable http proxy
-		packages.add('libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev') #required for pip requirements
+		packages.add('libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev python-dev') #required for pip requirements
+		packages.add('linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc') #docs
 		packages_list = map(None,packages)
 		shutit.install(string.join(packages_list,' '))
 		# CPAN
@@ -135,8 +133,8 @@ class dev_tools(ShutItModule):
 		shutit.logout()
 		# pips
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
-		#shutit.send('pip install -r /tmp/requirements.txt')
-		#shutit.send('rm -f /tmp/requirements.txt')
+		shutit.send('pip install -r /tmp/requirements.txt')
+		shutit.send('rm -f /tmp/requirements.txt')
 		return True
 
 	def get_config(self, shutit):
