@@ -39,6 +39,9 @@ RUN apt-get install -y mitmproxy
 RUN apt-get install -y libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements
 # TO Classify
 RUN apt-get install -y ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow
+# docs
+RUN apt-get install -y linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
+
 
 
 WORKDIR /space/git
