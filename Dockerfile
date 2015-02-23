@@ -15,7 +15,6 @@ RUN apt-get install -y curl net-tools  nmap socat wget whois socat openssh-clien
 RUN apt-get install -y git git-man subversion cvs
 # Package management
 RUN apt-get install -y apt-file alien apt-utils
-        graphviz
 # System debugging
 RUN apt-get install -y iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd
 # Finding
@@ -38,7 +37,7 @@ RUN apt-get install -y mitmproxy
 #required for pip requirements
 RUN apt-get install -y libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements
 # TO Classify
-RUN apt-get install -y ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow
+RUN apt-get install -y ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz
 # docs
 RUN apt-get install -y linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
 
