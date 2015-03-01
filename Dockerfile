@@ -10,7 +10,7 @@ RUN pip install -r requirements.txt
 # Editors
 RUN apt-get install -y vim vim-common vim-doc vim-pathogen
 # Network tools
-RUN apt-get install -y curl net-tools  nmap socat wget whois socat openssh-client openssh-server openssl
+RUN apt-get install -y curl net-tools  nmap wget whois socat openssh-client openssh-server openssl
 # Source control
 RUN apt-get install -y git git-man subversion cvs
 # Package management
@@ -31,6 +31,10 @@ RUN apt-get install -y zip unzip
 RUN apt-get install -y haproxy
 # Config management
 RUN apt-get install -y ansible
+# Who's using bandwidth?
+RUN apt-get install -y nethogs iftop
+# vim-based file browser
+RUN apt-get install -y ranger
 
 #ssl-capable http proxy
 RUN apt-get install -y mitmproxy
