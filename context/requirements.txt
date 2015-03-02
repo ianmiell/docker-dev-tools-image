@@ -41,7 +41,6 @@ pylint
 pynsca
 pyOpenSSL
 pyparsing
-pysmbc
 python-augeas
 python-dateutil
 python-ldap
