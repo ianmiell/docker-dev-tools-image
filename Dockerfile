@@ -7,43 +7,60 @@ RUN git clone https://github.com/ianmiell/shutit.git
 WORKDIR shutit
 RUN pip install -r requirements.txt
 
-# Editors
-RUN apt-get install -y vim vim-common vim-doc vim-pathogen
+##########
+# Editors:
+#vim vim-common vim-doc vim-pathogen
+###############
 # Network tools
-RUN apt-get install -y curl net-tools  nmap wget whois socat openssh-client openssh-server openssl
+# curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl 
+# mit-proxy: ssl-capable http proxy
+###############
 # Source control
-RUN apt-get install -y git git-man subversion cvs
+# git git-man subversion cvs
+###############
 # Package management
-RUN apt-get install -y apt-file alien apt-utils
+# apt-file alien apt-utils
+###############
 # System debugging
-RUN apt-get install -y iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd
-# Finding
-RUN apt-get install -y mlocate
+# iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd
+###############
+# Finding files
+# mlocate
+###############
 # Languages
-RUN apt-get install -y tcl erlang python-pip python-dev
+# tcl erlang python-pip python-dev
+###############
 # General utility/productivity/dev tools
-RUN apt-get install -y tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils
+# tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils
+###############
 # Compiling
-RUN apt-get install -y build-essential
+# build-essential
+###############
 # Unpacking
-RUN apt-get install -y zip unzip 
+# zip unzip
+###############
 # Server applications
-RUN apt-get install -y haproxy
+# haproxy 
+###############
 # Config management
-RUN apt-get install -y ansible
+# ansible
+###############
 # Who's using bandwidth?
-RUN apt-get install -y nethogs iftop
+# nethogs
+# iftop
+###############
 # vim-based file browser
-RUN apt-get install -y ranger
-
-#ssl-capable http proxy
-RUN apt-get install -y mitmproxy
-#required for pip requirements
-RUN apt-get install -y libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements
-# TO Classify
-RUN apt-get install -y ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz
+# ranger -
+###############
+# required for pip requirements
+# libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev
+###############
 # docs
-RUN apt-get install -y linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
+# linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
+###############
+# TO Classify
+# ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz
+RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien apt-utils iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
 
 
 
