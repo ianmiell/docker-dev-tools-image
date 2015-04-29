@@ -13,8 +13,11 @@ class dev_tools(ShutItModule):
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
 		shutit.login(user='imiell')
+		# dotfiles
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
+		# tty2gif
+		shutit.send('git clone https://github.com/z24/tty2gif.git')
 		# TODO other git repos
 		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com'})
 		shutit.logout()
