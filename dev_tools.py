@@ -16,10 +16,14 @@ class dev_tools(ShutItModule):
 		# dotfiles
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
-		# tty2gif
-		shutit.send('git clone https://github.com/z24/tty2gif.git')
-		# TODO other git repos
 		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com'})
+		shutit.send('cd -')
+		# TODO other git repos
+		shutit.send('git clone https://github.com/icholy/ttygif.git')
+		shutit.send('cd ttygif')
+		shutit.send('make')
+		shutit.send('cp ttygif /usr/bin')
+		shutit.send('cp concat.sh /usr/bin')
 		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
