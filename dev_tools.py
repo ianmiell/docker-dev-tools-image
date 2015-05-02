@@ -31,6 +31,7 @@ class dev_tools(ShutItModule):
 		shutit.login(command='su -')
 		shutit.send('cpan install Graph::Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
 		shutit.logout()
+		shutit.send('wget -qO- https://search.maven.org/remote_content?g=com.madgag&a=bfg&v=LATEST > bfg.jar')
 		# pips
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
 		shutit.send('pip install -r /tmp/requirements.txt')
