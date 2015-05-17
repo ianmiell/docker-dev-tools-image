@@ -18,12 +18,17 @@ class dev_tools(ShutItModule):
 		shutit.send('cd ~/.dotfiles')
 		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com'})
 		shutit.send('cd -')
-		# TODO other git repos
+		# ttygif
 		shutit.send('git clone https://github.com/icholy/ttygif.git')
 		shutit.send('cd ttygif')
-		shutit.send('make')
 		shutit.send('cp ttygif /usr/bin')
 		shutit.send('cp concat.sh /usr/bin')
+		shutit.send('make')
+		shutit.send('cd -')
+		# j2
+		shutit.send('git clone https://github.com/rupa/j2.git')
+		shutit.add_to_bashrc('export JPY=/home/imiell/j.py # tells j.sh where the python script is')
+		shutit.add_to_bashrc('. /home/imiell/j.py')
 		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
