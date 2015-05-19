@@ -57,6 +57,9 @@ RUN pip install -r requirements.txt
 # docs
 # linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc
 ###############
+# testing
+# ab seige
+###############
 # backup
 # bup rsync
 # TO Classify
@@ -64,14 +67,14 @@ RUN pip install -r requirements.txt
 
 
 
-RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien apt-utils iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb nettcp libmagick++-dev parallel
+RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien apt-utils iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb nettcp libmagick++-dev parallel ab
 
 
 
 WORKDIR /space/git
 RUN git clone https://github.com/ianmiell/docker-dev-tools-image.git
 WORKDIR /space/git/docker-dev-tools-image
-RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery bash
+RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery dockerfile
 
 USER imiell
 
