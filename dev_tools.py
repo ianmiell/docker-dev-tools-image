@@ -25,10 +25,11 @@ class dev_tools(ShutItModule):
 		shutit.send('cp concat.sh /usr/bin')
 		shutit.send('make')
 		shutit.send('cd -')
+		# learn, for wget-finder - to find files on the net
+		shutit.send('git clone https://github.com/chilicuil/learn')
 		# j2
-		shutit.send('git clone https://github.com/rupa/j2.git')
-		shutit.add_to_bashrc('export JPY=/home/imiell/j.py # tells j.sh where the python script is')
-		shutit.add_to_bashrc('. /home/imiell/j.py')
+		shutit.send('git clone https://github.com/rupa/z')
+		shutit.add_to_bashrc('. /home/imiell/z/z.sh')
 		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
