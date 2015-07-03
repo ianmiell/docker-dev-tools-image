@@ -78,4 +78,6 @@ RUN /opt/shutit/shutit build --shutit_module_path /opt/shutit/library --delivery
 
 USER imiell
 
+ENV JAVA_HOME=/usr
+
 CMD ["/bin/bash"] 
