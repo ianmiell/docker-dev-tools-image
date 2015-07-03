@@ -1,6 +1,7 @@
 backports.ssl-match-hostname
 bottle
 charade
+cli-github
 colorama
 configobj
 coverage
@@ -52,6 +53,7 @@ reportlab
 requests
 requests-oauthlib
 rtslib-fb
+shutit
 six
 slip
 Sphinx
@@ -65,4 +67,3 @@ urllib3
 urwid
 virtualenv
 wsgiref
-
