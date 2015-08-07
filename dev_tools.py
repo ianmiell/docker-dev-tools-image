@@ -28,6 +28,7 @@ class dev_tools(ShutItModule):
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
 		shutit.send('pip install -r /tmp/requirements.txt')
 		shutit.send('rm -f /tmp/requirements.txt')
+		shutit.send('gem install bropages')
 		return True
 
 	def get_config(self, shutit):
