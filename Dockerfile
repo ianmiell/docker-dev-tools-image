@@ -10,215 +10,239 @@ RUN pip install -r requirements.txt
 ###############
 # Editors:
 ###############
-# vim
-# vim-common
-# vim-pathogen
-# ranger: vim-based file browser
+# vim:            you know
+# vim-pathogen:   vim plugins
+# ranger:         vim-based file browser
 ###############
 # Network tools:
 ###############
-# sniffit: packet sniffer with ncurses interface
-# curl
-# net-tools
-# nmap
-# wget
-# whois
-# socat
-# openssh-client
-# openssh-server
-# openssl
-# libwww-perl
-# nettcp
-# mssh
-# netpipe-tcp
-# netsed
-# netsniff-ng
-# mit-proxy: ssl-capable http proxy
-# tcpflow
-# etherape: visualise the network in real time - very neat
-# tcpd: monitor and manage incoming tcp connections
-# tcpick: useful tcp tracker, like tcpdump but easier
-# tcpreplay: replay tcp streams at different speeds
-# tcpreen: network man in the middle for analysis etc
-# tcpspy: log tcp connections to syslog
-# tcputils: mini-inetd - small TCP/IP connection dispatcher (very small, no deps - handy for servers you want to paste programs to - xz down to 3k!)
-#           tcpbug - TCP/IP connection bugging device - also small
-#           tcpconnect  - general TCP/IP client - telnet
-#           tcplisten - general TCP/IP server - use nc
-#           getpeername - get name of connected TCP/IP peer
-# tcptrack: tracks tcp sessions with a simple ncurses interface you can sort on
-# stone: repeats tcp packets to a different network endpoint
-# darkstat: serves info about network over http
+# sniffit:        packet sniffer with ncurses interface
+# curl:           stream tcp requests to stdout
+# net-tools:      arp:        manipulate ARP cache
+#                 ifconfig:   manipulate interfaces
+#                 netstat:    network connections
+#                 rarp:       manipulate system RARP table
+#                 nameif:     name ifs based on MAC address
+#                 route:      manipulate routing table
+#                 plipconfig: parallel port manipulation
+#                 slattach:   serial link -> network mode
+#                 mii-tool:   manipulate interface status
+#                 iptunnel:   create an ip tunnel (?)
+#                 ipmaddr:    list ip addresses and links (?)
+# nmap:           host port analyser
+# wget:           get web resources
+# whois:          dns lookup tool
+# socat:          socket and general file concatenator
+# openssh-client: ssl client
+# openssh-server: ssl server - handy for certificate work
+# openssl:        ssl package
+# libwww-perl:    perl www libs
+# mssh:           multiple ssh at once
+# netpipe-tcp:    NetPIPE answers such questions as: how soon will a given data block of size k arrive at its destination? Which network and protocol will transmit size k blocks the fastest? What is a given network's effective maximum throughput and saturation level?  Does there exist a block size k for which the throughput is maximized? How much communication overhead is due to the network communication protocol layer(s)? How quickly will a small (< 1 kbyte) control message arrive, and which network and protocol are best for this purpose?
+# netsed:         sed on network streams
+# netsniff-ng:    another network sniffer. nice man page
+# mit-proxy:      ssl-capable http proxy
+# tcpflow:        records the flow of tcp connections
+# etherape:       visualise the network in real time - very neat
+# tcpd:           monitor and manage incoming tcp connections
+# tcpick:         useful tcp tracker, like tcpdump but easier
+# tcpreplay:      replay tcp streams at different speeds
+# tcpreen:        network man in the middle for analysis etc
+# tcpspy:         log tcp connections to syslog
+# tcputils:       mini-inetd - small TCP/IP connection dispatcher (very small, no deps - handy for servers you want to paste programs to - xz down to 3k!)
+#                 tcpbug - TCP/IP connection bugging device - also small
+#                 tcpconnect  - general TCP/IP client - telnet
+#                 tcplisten - general TCP/IP server - use nc
+#                 getpeername - get name of connected TCP/IP peer
+# tcptrack:       tracks tcp sessions with a simple ncurses interface you can sort on
+# stone:          repeats tcp packets to a different network endpoint
+# darkstat:       serves info about network over http
 ###############
 # Source control:
 ###############
-# git
-# git-man
-# subversion
-# cvs
+# git:            you know
+# subversion:     you know
+# cvs:            you know
 ###############
 # Package management:
 ###############
-# apt-file
-# alien
-# apt-utils
+# apt-file:       maintains database of files in deb packages
+# alien:          allows yum installs into deb systems
 ###############
 # System debugging:
 ###############
-# iotop
-# strace
-# tcpdump
-# iproute
-# ltrace
-# lsof
-# inotify-tools
-# sysstat
-# ddd
-# tshark
+# iotop:          top for disk IO
+# iftop:           network top
+# tcpdump:        generic tcp recorder
+# tshark:         TShark is able to detect, read and write the same capture files that are supported by Wireshark
+# strace:         system call tracer
+# ltrace:         library call tracer
+# iproute:        ip routing into (ip route)
+# nethogs:         bandwidth use by process
+# sysstat:        sysstat config file
+# inotify-tools:  notify on file activity
+# lsof:           file tracker
+# fatrace:        file open etc tracer
+# ddd:            visual C debugger
+# time:           timing info for commands
 ###############
 # Sysadmin:
 ###############
-# pkg-config
-# cron
-# anacron
-# at
-# fslint
-# sudo
-# lsb-base
-# lsb-release
-# procps: free, kill etc
-# software-properties-common: package management
+# cron:                       you know
+# anacron:                    you know
+# at:                         run commands at times
+# fslint:                     useful filesystem programs:
+#                             findup: find DUPlicate files
+#                             findnl: find Name Lint (problems with filenames)
+#                             findu8: find filenames with invalid utf8 encoding
+#                             findbl: find Bad Links (various problems with symlinks)
+#                             findsn: find Same Name (problems with clashing names)
+#                             finded: find Empty Directories
+#                             findid: find files with dead user IDs
+#                             findns: find Non Stripped executables
+#                             findrs: find Redundant Whitespace in files
+#                             findtf: find Temporary Files
+#                             findul: find possibly Unused Libraries
+#                             zipdir: Reclaim wasted space in ext2 directory entries
+# sudo:                       you know
+# lsb-base:                   base linux packages
+# lsb-release:                base linux release info
+# procps:                     free, kill etc
 ###############
 # Finding files:
 ###############
-# mlocate
+# mlocate:            local filename database
 ###############
 # Languages:
 ###############
-# tcl
-# erlang
-# python-pip
-# python-dev
-# perl
-# perl-base
-# perl-modules
-# golang: Go
-# rhino:  javascript interpreter
-# virtualenv: python environments
+# tcl:                you know
+# erlang:             you know
+# perl:               you know
+# perl-base:          basic perl files
+# perl-modules:       perl modules
+# golang:             Go
+# rhino:              javascript interpreter
+# python-pip:         python packaging tool
 # python2.7-examples: example python scripts
+# virtualenv:         python environments
 ###############
 # General utility/productivity/dev tools:
 ###############
 # rlwrap
-# expect-dev
-# sed
-# patch
-# tmux
-# xmlstarlet
-# xclip
-# jq
-# telnet
-# athena-jot
-# xterm
-# eatmydata
-# util-linux
-# moreutils
-# sshfs
-# tree
-# screen
-# xdotool
-# xmlto
-# expect
-# expect-dev
-# coreutils
-# shellcheck
-# bashdb
-# parallel
-# readline-common
-# sec
-# time
-# tree
-# tofrodos
-# ascii
-# daemon: turn programs into daemons
+# sed:                stream editor
+# patch:              diff applier
+# tmux:               terminal multiplexer
+# xmlstarlet:         xml tools
+# xclip:              copy text to clipboard
+# jq:                 json querier
+# telnet:             you know
+# athena-jot:         list numbers
+# xterm:              simple terminal
+# eatmydata:          write to files without fsyncing
+# coreutils:          central linux utils
+# util-linux:         various utils
+# moreutils:          linux utilities
+#                     chronic:  runs a command quietly unless it fails
+#                     combine:  combine the lines in two files using boolean operations
+#                     errno:    look up errno names and descriptions
+#                     ifdata:   get network interface info without parsing ifconfig output
+#                     ifne:     run a program if the standard input is not empty
+#                     isutf8:   check if a file or standard input is utf-8
+#                     lckdo:    execute a program with a lock held
+#                     mispipe:  pipe two commands, returning the exit status of the first
+#                     parallel: run multiple jobs at once
+#                     pee:      tee standard input to pipes
+#                     sponge:   soak up standard input and write to a file
+#                     ts:       timestamp standard input
+#                     vidir:    edit a directory in your text editor
+#                     vipe:     insert a text editor into a pipe
+#                     zrun:     automatically uncompress arguments to command
+# sshfs:              mount an ssh connection as a filesystem
+# screen:             terminal multiplexer
+# xdotool:            simulate/program X keyboard and mouse events
+# xmlto:              convert xml to various formats
+# expect:             automate inputs/outputs
+# shellcheck:         shell script checker
+# bashdb:             bash debugger
+# parallel:           args for each arg in parallel
+# sec:                simple event correlator, when things happen, do things
+# tree:               print contents in tree format
+# tofrodos:           convert files to/from dos format
+# ascii:              print ascii table
+# daemon:             turn programs into daemons
 ###############
 # Compiling:
 ###############
-# build-essential
-# ncurses-base
-# ncurses-bin
+# pkg-config:      info about installed libraries
+# build-essential: essential build tools, eg make
+# ncurses-base:    ncurses files
+# ncurses-bin:     tools for manipulating terminals
 ###############
 # Unpacking:
 ###############
-# zip
-# unzip
-# xz
+# zip:             you know
+# unzip:           you know
+# xz:              very tight compression algorithm
 ###############
 # Server applications:
 ###############
-# haproxy
-# webfs
+# haproxy:         load balancing proxy
+# webfs:           static content webserver
 ###############
 # Config management:
 ###############
-# ansible
+# ansible:         like puppet etc
 ###############
 # Who's using bandwidth?:
 ###############
-# nethogs
-# iftop
 ###############
-# Required for pip requirements:
+# Dev/common packages:
 ###############
-# libldap2-devlibgpgme11-dev
-# liblzma-dev
-# libsmbclient-dev
-# libsasl2-dev
-# libattr1-dev
+# python-dev:                 python development files
+# expect-dev:                 expect development files
+# vim-common:                 common vim files
+# software-properties-common: package management
+# readline-common:            readline files
 ###############
 # Graphics:
 ###############
-# gocr: command line OCR
-# libmagick++-dev
-# graphviz
+# gocr:                command line OCR
+# graphviz:            generate graphs
 ###############
 # Docs:
 ###############
-# linux-doc
-# libcorelinux-doc
-# user-mode-linux-doc
-# perl-doc
-# vim-doc
-# perl-doc
-# vim-doc
-# asciidoc
+# linux-doc:           kernel documentation
+# libcorelinux-doc:    linux dev reference manual
+# perl-doc:            perl docs
+# vim-doc:             vimdoc
+# asciidoc:            ascii-based documentation tool
 ###############
 # Testing:
 ###############
-# ab
-# seige
+# ab:                  apache bench
+# seige:               simulate ddos
 ###############
 # Backup:
 ###############
-# bup
-# rsync
+# bup:                 backup program for large files
+# rsync:               intelligent copy tool
 ###############
 # Build tools:
 ###############
-# ant
-# maven
+# ant:                 java-based build tool
+# maven:               ant++
 ###############
 # Containers:
 ###############
-# docker.io
+# docker.io:           you know
 ###############
 # Databases:
 ###############
-# postgresql-client
+# postgresql-client:   postgres client (psql)
 ###############
 
 
-RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien apt-utils iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb nettcp libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev
+RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev fatrace
 
 
 
