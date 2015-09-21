@@ -38,7 +38,15 @@ RUN pip install -r requirements.txt
 # openssl:        ssl package
 # libwww-perl:    perl www libs
 # mssh:           multiple ssh at once
-# netpipe-tcp:    NetPIPE answers such questions as: how soon will a given data block of size k arrive at its destination? Which network and protocol will transmit size k blocks the fastest? What is a given network's effective maximum throughput and saturation level?  Does there exist a block size k for which the throughput is maximized? How much communication overhead is due to the network communication protocol layer(s)? How quickly will a small (< 1 kbyte) control message arrive, and which network and protocol are best for this purpose?
+# netpipe-tcp:    NetPIPE answers such questions as: how soon will a given data
+#                   block of size k arrive at its destination? Which network and
+#                   protocol will transmit size k blocks the fastest? What is a
+#                   given network's effective maximum throughput and saturation
+#                   level?  Does there exist a block size k for which the
+#                   throughput is maximized? How much communication overhead is
+#                   due to the network communication protocol layer(s)? How
+#                   quickly will a small (< 1 kbyte) control message arrive, and
+#                   which network and protocol are best for this purpose?
 # netsed:         sed on network streams
 # netsniff-ng:    another network sniffer. nice man page
 # mit-proxy:      ssl-capable http proxy
@@ -49,12 +57,15 @@ RUN pip install -r requirements.txt
 # tcpreplay:      replay tcp streams at different speeds
 # tcpreen:        network man in the middle for analysis etc
 # tcpspy:         log tcp connections to syslog
-# tcputils:       mini-inetd - small TCP/IP connection dispatcher (very small, no deps - handy for servers you want to paste programs to - xz down to 3k!)
+# tcputils:       mini-inetd - small TCP/IP connection dispatcher (very small,
+#                   no deps - handy for servers you want to paste programs to -
+#                   xz down to 3k!)
 #                 tcpbug - TCP/IP connection bugging device - also small
 #                 tcpconnect  - general TCP/IP client - telnet
 #                 tcplisten - general TCP/IP server - use nc
 #                 getpeername - get name of connected TCP/IP peer
-# tcptrack:       tracks tcp sessions with a simple ncurses interface you can sort on
+# tcptrack:       tracks tcp sessions with a simple ncurses interface you can
+#                   sort on
 # stone:          repeats tcp packets to a different network endpoint
 # darkstat:       serves info about network over http
 ###############
@@ -74,11 +85,12 @@ RUN pip install -r requirements.txt
 # iotop:          top for disk IO
 # iftop:           network top
 # tcpdump:        generic tcp recorder
-# tshark:         TShark is able to detect, read and write the same capture files that are supported by Wireshark
+# tshark:         TShark is able to detect, read and write the same capture
+#                   files that are supported by Wireshark
 # strace:         system call tracer
 # ltrace:         library call tracer
 # iproute:        ip routing into (ip route)
-# nethogs:         bandwidth use by process
+# nethogs:        bandwidth use by process
 # sysstat:        sysstat config file
 # inotify-tools:  notify on file activity
 # lsof:           file tracker
@@ -88,30 +100,30 @@ RUN pip install -r requirements.txt
 ###############
 # Sysadmin:
 ###############
-# cron:                       you know
-# anacron:                    you know
-# at:                         run commands at times
-# fslint:                     useful filesystem programs:
-#                             findup: find DUPlicate files
-#                             findnl: find Name Lint (problems with filenames)
-#                             findu8: find filenames with invalid utf8 encoding
-#                             findbl: find Bad Links (various problems with symlinks)
-#                             findsn: find Same Name (problems with clashing names)
-#                             finded: find Empty Directories
-#                             findid: find files with dead user IDs
-#                             findns: find Non Stripped executables
-#                             findrs: find Redundant Whitespace in files
-#                             findtf: find Temporary Files
-#                             findul: find possibly Unused Libraries
-#                             zipdir: Reclaim wasted space in ext2 directory entries
-# sudo:                       you know
-# lsb-base:                   base linux packages
-# lsb-release:                base linux release info
-# procps:                     free, kill etc
+# cron:           you know
+# anacron:        you know
+# at:             run commands at times
+# fslint:         useful filesystem programs:
+#                 findup: find DUPlicate files
+#                 findnl: find Name Lint (problems with filenames)
+#                 findu8: find filenames with invalid utf8 encoding
+#                 findbl: find Bad Links
+#                 findsn: find Same Name (clashing filenames)
+#                 finded: find Empty Directories
+#                 findid: find files with dead user IDs
+#                 findns: find Non Stripped executables
+#                 findrs: find Redundant Whitespace in files
+#                 findtf: find Temporary Files
+#                 findul: find possibly Unused Libraries
+#                 zipdir: Reclaim wasted space in ext2 dir entries
+# sudo:           you know
+# lsb-base:       base linux packages
+# lsb-release:    base linux release info
+# procps:         free, kill etc
 ###############
 # Finding files:
 ###############
-# mlocate:            local filename database
+# mlocate:        local filename database
 ###############
 # Languages:
 ###############
@@ -129,47 +141,47 @@ RUN pip install -r requirements.txt
 # General utility/productivity/dev tools:
 ###############
 # rlwrap
-# sed:                stream editor
-# patch:              diff applier
-# tmux:               terminal multiplexer
-# xmlstarlet:         xml tools
-# xclip:              copy text to clipboard
-# jq:                 json querier
-# telnet:             you know
-# athena-jot:         list numbers
-# xterm:              simple terminal
-# eatmydata:          write to files without fsyncing
-# coreutils:          central linux utils
-# util-linux:         various utils
-# moreutils:          linux utilities
-#                     chronic:  runs a command quietly unless it fails
-#                     combine:  combine the lines in two files using boolean operations
-#                     errno:    look up errno names and descriptions
-#                     ifdata:   get network interface info without parsing ifconfig output
-#                     ifne:     run a program if the standard input is not empty
-#                     isutf8:   check if a file or standard input is utf-8
-#                     lckdo:    execute a program with a lock held
-#                     mispipe:  pipe two commands, returning the exit status of the first
-#                     parallel: run multiple jobs at once
-#                     pee:      tee standard input to pipes
-#                     sponge:   soak up standard input and write to a file
-#                     ts:       timestamp standard input
-#                     vidir:    edit a directory in your text editor
-#                     vipe:     insert a text editor into a pipe
-#                     zrun:     automatically uncompress arguments to command
-# sshfs:              mount an ssh connection as a filesystem
-# screen:             terminal multiplexer
-# xdotool:            simulate/program X keyboard and mouse events
-# xmlto:              convert xml to various formats
-# expect:             automate inputs/outputs
-# shellcheck:         shell script checker
-# bashdb:             bash debugger
-# parallel:           args for each arg in parallel
-# sec:                simple event correlator, when things happen, do things
-# tree:               print contents in tree format
-# tofrodos:           convert files to/from dos format
-# ascii:              print ascii table
-# daemon:             turn programs into daemons
+# sed:            stream editor
+# patch:          diff applier
+# tmux:           terminal multiplexer
+# xmlstarlet:     xml tools
+# xclip:          copy text to clipboard
+# jq:             json querier
+# telnet:         you know
+# athena-jot:     list numbers
+# xterm:          simple terminal
+# eatmydata:      write to files without fsyncing
+# coreutils:      central linux utils
+# util-linux:     various utils
+# moreutils:      linux utilities
+#                   chronic:  runs a command quietly unless it fails
+#                   combine:  combine the lines in two files using boolean operations
+#                   errno:    look up errno names and descriptions
+#                   ifdata:   get network interface info without parsing ifconfig output
+#                   ifne:     run a program if the standard input is not empty
+#                   isutf8:   check if a file or standard input is utf-8
+#                   lckdo:    execute a program with a lock held
+#                   mispipe:  pipe two commands, returning the exit status of the first
+#                   parallel: run multiple jobs at once
+#                   pee:      tee standard input to pipes
+#                   sponge:   soak up standard input and write to a file
+#                   ts:       timestamp standard input
+#                   vidir:    edit a directory in your text editor
+#                   vipe:     insert a text editor into a pipe
+#                   zrun:     automatically uncompress arguments to command
+# sshfs:          mount an ssh connection as a filesystem
+# screen:         terminal multiplexer
+# xdotool:        simulate/program X keyboard and mouse events
+# xmlto:          convert xml to various formats
+# expect:         automate inputs/outputs
+# shellcheck:     shell script checker
+# bashdb:         bash debugger
+# parallel:       args for each arg in parallel
+# sec:            simple event correlator, when things happen, do things
+# tree:           print contents in tree format
+# tofrodos:       convert files to/from dos format
+# ascii:          print ascii table
+# daemon:         turn programs into daemons
 ###############
 # Compiling:
 ###############
@@ -242,7 +254,7 @@ RUN pip install -r requirements.txt
 ###############
 
 
-RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev fatrace
+RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev fatrace
 
 
 
