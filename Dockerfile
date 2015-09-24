@@ -58,7 +58,6 @@ RUN pip install -r requirements.txt
 # stone:          repeats tcp packets to a different network endpoint
 # darkstat:       serves info about network over http
 ###############
-# Source control:
 ###############
 # git:            you know
 # subversion:     you know
@@ -68,11 +67,14 @@ RUN pip install -r requirements.txt
 ###############
 # apt-file:       maintains database of files in deb packages
 # alien:          allows yum installs into deb systems
+
+
 ###############
 # System debugging:
 ###############
+# cpulimit:       limit CPU for a process
 # iotop:          top for disk IO
-# iftop:           network top
+# iftop:          network top
 # tcpdump:        generic tcp recorder
 # tshark:         TShark is able to detect, read and write the same capture files that are supported by Wireshark
 # strace:         system call tracer
@@ -241,10 +243,7 @@ RUN pip install -r requirements.txt
 # postgresql-client:   postgres client (psql)
 ###############
 
-
-RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev fatrace
-
-
+RUN apt-get install -y vim vim-common vim-doc vim-pathogen curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy libldap2-dev libgpgme11-dev liblzma-dev libsmbclient-dev libsasl2-dev libattr1-dev #required for pip requirements ant ascii asciidoc virtualenv golang rsync docker.io at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup shellcheck bashdb libmagick++-dev parallel ab silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat seige stone libldap2-devlibgpgme11-dev fatrace cpulimit
 
 WORKDIR /space/git
 RUN git clone https://github.com/ianmiell/docker-dev-tools-image.git
