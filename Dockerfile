@@ -60,6 +60,8 @@ FROM ubuntu:15.10
 #                   sort on
 # stone:          repeats tcp packets to a different network endpoint
 # darkstat:       serves info about network over http
+# sqlmap:         try and break into a website's db
+# nocache:        bypass filesystem cache
 ###############
 # Source control:
 ###############
@@ -249,7 +251,7 @@ FROM ubuntu:15.10
 # postgresql-client:   postgres client (psql)
 ###############
 
-RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb
+RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb sqlmap
 
 RUN pip install shutit
 
