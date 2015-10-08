@@ -43,6 +43,13 @@ class dev_tools(ShutItModule):
 		shutit.send('pip install -r /tmp/requirements.txt')
 		shutit.send('rm -f /tmp/requirements.txt')
 		shutit.send('gem install bropages')
+
+		# Go
+		shutit.send('go get github.com/tools/godep')
+		shutit.send('mkdir -p /opt/go')
+		shutit.send('chmod 777 /opt/go')
+		shutit.add_to_bashrc('export GOPATH=/opt/go')
+		shutit.add_to_bashrc('export PATH=$PATH:${GOPATH}/bin')
 		return True
 
 	def get_config(self, shutit):
