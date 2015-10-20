@@ -18,6 +18,10 @@ class dev_tools(ShutItModule):
 		shutit.send('cd ~/.dotfiles')
 		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
 		shutit.send('cd -')
+		# q text as data (csv to sql)
+		shutit.send('wget https://github.com/harelba/packages-for-q/raw/master/deb/q-text-as-data_1.5.0-1_all.deb')
+		shutit.send('dpkg -i q-text-as-data_1.5.0-1_all.deb')
+		shutit.send('rm q-text-as-data_1.5.0-1_all.deb')
 		# ttygif
 		shutit.send('git clone https://github.com/icholy/ttygif.git')
 		shutit.send('cd ttygif')
