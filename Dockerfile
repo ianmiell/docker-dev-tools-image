@@ -182,6 +182,16 @@ ENV DEBIAN_FRONTEND noninteractive
 # asciinema:      record your session
 # daemon:         turn programs into daemons
 # actiona:        automation for web interactions
+# dateutils:      command line date and time utilities
+#                   dadd:     add durations to dates or times
+#                   dconv:    convert dates between calendars or time zones
+#                   ddiff:    compute durations between dates and times
+#                   dgrep:    find date or time matches in input stream
+#                   dround:   round dates or times to designated values
+#                   dseq:     generate sequences of dates or times
+#                   dtest:    compare dates or times
+#                   strptime: command line version of the C function
+
 ###############
 # Compiling:
 ###############
@@ -257,9 +267,13 @@ ENV DEBIAN_FRONTEND noninteractive
 ###############
 # hollywood:           fill screen with hollywood-style terminal
 ###############
+# Media:
+###############
+# youtube-dl:          youtube downloader
 
 
-RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb sqlmap ndiff hollywood doc-rfc actiona
+
+RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb sqlmap ndiff hollywood doc-rfc actiona dateutils youtube-dl
 
 RUN apt-get update && apt-get install -y python-pip git
 RUN pip install shutit
