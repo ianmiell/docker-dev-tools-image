@@ -125,6 +125,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # lsb-release:    base linux release info
 # procps:         free, kill etc
 # i7z:            CPU tools for Intel i-chips
+# squashfs-tools: squash data nicely
 ###############
 # Finding files:
 ###############
@@ -279,7 +280,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 
 
-RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb gitg git-repair i7z sqlmap ndiff hollywood doc-rfc actiona dateutils youtube-dl dwdiff iodine tsocks
+RUN apt-get update && apt-get install -y vim vim-common vim-doc curl net-tools nmap wget whois socat openssh-client openssh-server openssl libwww-perl tig git git-man subversion cvs apt-file alien iotop strace tcpdump iproute ltrace lsof inotify-tools sysstat ddd tshark mlocate tcl erlang python-pip python-dev tmux xmlstarlet xclip jq telnet athena-jot xterm eatmydata util-linux moreutils sshfs tree screen xdotool xmlto expect expect-dev coreutils build-essential zip unzip haproxy ansible nethogs iftop ranger mitmproxy ant ascii asciinema asciidoc golang rsync docker at cron expect-dev patch perl perl-base perl-doc perl-modules sed anacron mssh daemon fslint gocr netpipe-tcp netsed netsniff-ng pkg-config procps sudo tcpd time tree tofrodos sec rhino postgresql-client maven lsb-base lsb-release readline-common rlwrap software-properties-common ncurses-base ncurses-bin tcpflow graphviz linux-doc libcorelinux-doc user-mode-linux-doc perl-doc vim-doc bup libmagick++-dev silversearcher-ag ruby-dev webfs etherape python2.7-examples sniffit tcpick tcpreplay tcpreen tcpspy tcputils darkstat stone fatrace bashdb gitg git-repair i7z sqlmap ndiff hollywood doc-rfc actiona dateutils youtube-dl dwdiff iodine tsocks squashfs-tools
 
 RUN apt-get update && apt-get install -y python-pip git
 RUN pip install shutit
