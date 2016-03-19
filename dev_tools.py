@@ -43,6 +43,7 @@ class dev_tools(ShutItModule):
 		shutit.logout()
 		shutit.send('wget -qO- https://search.maven.org/remote_content?g=com.madgag&a=bfg&v=LATEST > bfg.jar')
 		# pips
+		shutit.send('pip install awscli')
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
 		shutit.send('pip install -r /tmp/requirements.txt')
 		shutit.send('rm -f /tmp/requirements.txt')

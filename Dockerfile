@@ -68,11 +68,8 @@ ENV DEBIAN_FRONTEND noninteractive
 # ndiff:          compare nmap outputs
 # dwdiff:         word-based differ with stats
 # iodine:         tunnel through DNS
-<<<<<<< HEAD
 # tsocks:         Only got SSH and want a VPN-like experience? This can help.
-=======
 # mininet:        mini network emulator
->>>>>>> b4c08ce28e152f837bb74f1d4ea2e82dab16df87
 ###############
 # Source control:
 ###############
