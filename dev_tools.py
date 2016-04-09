@@ -34,6 +34,7 @@ class dev_tools(ShutItModule):
 		# j2
 		shutit.send('git clone https://github.com/rupa/z')
 		shutit.add_to_bashrc('. /home/imiell/z/z.sh')
+		shutit.add_to_bashrc('alias python=ptpython')
 		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
@@ -44,6 +45,7 @@ class dev_tools(ShutItModule):
 		shutit.send('wget -qO- https://search.maven.org/remote_content?g=com.madgag&a=bfg&v=LATEST > bfg.jar')
 		# pips
 		shutit.send('pip install awscli')
+		shutit.send('pip install ptpython')
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
 		shutit.send('pip install -r /tmp/requirements.txt')
 		shutit.send('rm -f /tmp/requirements.txt')
