@@ -12,6 +12,7 @@ class dev_tools(ShutItModule):
 		shutit.install('git')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
+		shutit.send('mkdir -p /space && chmod 777 /space')
 		shutit.login(user='imiell')
 		# dotfiles
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
@@ -60,8 +61,11 @@ class dev_tools(ShutItModule):
 
 		# Asciidoc-pdf reveal
 		shutit.send('gem install asciidoctor slim thread_safe')
+		shutit.send('gem install --pre asciidoctor-pdf')
+		shutit.send('gem install coderay pygments.rb')
 		shutit.send('git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git')
 		shutit.send('git clone git://github.com/hakimel/reveal.js.git')
+
 		return True
 
 	def get_config(self, shutit):
