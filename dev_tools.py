@@ -57,6 +57,11 @@ class dev_tools(ShutItModule):
 		shutit.send('chmod 777 /opt/go')
 		shutit.add_to_bashrc('export GOPATH=/opt/go')
 		shutit.add_to_bashrc('export PATH=$PATH:${GOPATH}/bin')
+
+		# Asciidoc-pdf reveal
+		shutit.send('gem install asciidoctor slim thread_safe')
+		shutit.send('git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git')
+		shutit.send('git clone git://github.com/hakimel/reveal.js.git')
 		return True
 
 	def get_config(self, shutit):
