@@ -17,7 +17,7 @@ class dev_tools(ShutItModule):
 		# dotfiles
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
-		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite':'O'})
+		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
 		shutit.send('cd -')
 		# q text as data (csv to sql)
 		shutit.send('wget https://github.com/harelba/packages-for-q/raw/master/deb/q-text-as-data_1.5.0-1_all.deb')
