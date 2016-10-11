@@ -290,6 +290,8 @@ RUN pip install shutit
 
 WORKDIR /opt
 RUN git clone https://github.com/ianmiell/docker-dev-tools-image.git
+WORKDIR /opt/docker-dev-tools-image
+RUN shutit build
 USER imiell
 
 ENV JAVA_HOME=/usr
