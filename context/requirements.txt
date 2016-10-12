@@ -13,7 +13,6 @@ epydoc
 html5lib
 httplib2
 iniparse
-iotop
 IPy
 Jinja2
 jira

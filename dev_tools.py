@@ -11,6 +11,7 @@ class dev_tools(ShutItModule):
 		# git
 		shutit.install('git')
 		shutit.install('python-pip')
+		shutit.install('ruby')
 		shutit.install('make gcc imagemagick ttyrec gcc x11-apps')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
