@@ -10,6 +10,8 @@ class dev_tools(ShutItModule):
 	def build(self, shutit):
 		# git
 		shutit.install('git')
+		shutit.install('python-pip')
+		shutit.install('make gcc imagemagick ttyrec gcc x11-apps')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
 		shutit.send('mkdir -p /space && chmod 777 /space')
@@ -17,18 +19,19 @@ class dev_tools(ShutItModule):
 		# dotfiles
 		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
-		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
+		#shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
+		shutit.send('script/bootstrap',expect='What is your github author name')
+		shutit.send('Ian Miell',expect='What is your github author email')
+		shutit.send('ian.miell@gmail.com',expect='verwrite all')
+		shutit.send('O')
 		shutit.send('cd -')
-		# q text as data (csv to sql)
-		shutit.send('wget https://github.com/harelba/packages-for-q/raw/master/deb/q-text-as-data_1.5.0-1_all.deb')
-		shutit.send('dpkg -i q-text-as-data_1.5.0-1_all.deb')
-		shutit.send('rm q-text-as-data_1.5.0-1_all.deb')
+		shutit.logout()
 		# ttygif
 		shutit.send('git clone https://github.com/icholy/ttygif.git')
 		shutit.send('cd ttygif')
-		shutit.send('cp ttygif /usr/bin')
-		shutit.send('cp concat.sh /usr/bin')
-		shutit.send('make')
+		#shutit.send('cp ttygif /usr/bin')
+		#shutit.send('cp concat.sh /usr/bin')
+		shutit.send('make install')
 		shutit.send('cd -')
 		# learn, for wget-finder - to find files on the net
 		shutit.send('git clone https://github.com/chilicuil/learn')
@@ -36,7 +39,6 @@ class dev_tools(ShutItModule):
 		shutit.send('git clone https://github.com/rupa/z')
 		shutit.add_to_bashrc('. /home/imiell/z/z.sh')
 		shutit.add_to_bashrc('alias python=ptpython')
-		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
 		# CPAN requires a re-login
