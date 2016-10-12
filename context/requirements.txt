@@ -34,7 +34,7 @@ Pygments
 pyinotify
 pylint
 python-dateutil
-python-ldap
+#python-ldap
 pyudev
 pyxattr
 pyxdg
