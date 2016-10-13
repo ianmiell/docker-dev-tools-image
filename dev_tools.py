@@ -9,10 +9,7 @@ class dev_tools(ShutItModule):
 
 	def build(self, shutit):
 		# git
-		shutit.install('git')
-		shutit.install('python-pip')
-		shutit.install('ruby')
-		shutit.install('make gcc imagemagick ttyrec gcc x11-apps pkg-config libfreetype6-dev python-dev libxslt1-dev')
+		shutit.install('git python-pip ruby2.0 mlocate make gcc imagemagick ttyrec gcc x11-apps pkg-config libfreetype6-dev python-dev libxslt1-dev golang')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
 		shutit.send('mkdir -p /space && chmod 777 /space')
@@ -53,19 +50,23 @@ class dev_tools(ShutItModule):
 		shutit.send_host_file('/tmp/requirements.txt','context/requirements.txt')
 		shutit.send('pip install -r /tmp/requirements.txt')
 		shutit.send('rm -f /tmp/requirements.txt')
-		shutit.send('gem install bropages')
+		#shutit.send('gem install bropages')
 
 		# Go
-		shutit.send('go get github.com/tools/godep')
 		shutit.send('mkdir -p /opt/go')
 		shutit.send('chmod 777 /opt/go')
 		shutit.add_to_bashrc('export GOPATH=/opt/go')
 		shutit.add_to_bashrc('export PATH=$PATH:${GOPATH}/bin')
+		shutit.send('export GOPATH=/opt/go')
+		shutit.send('export PATH=$PATH:${GOPATH}/bin')
+		shutit.send('go get github.com/tools/godep')
 
 		# Asciidoc-pdf reveal
+		shutit.send('gem install prawn --version 1.3.0')
+		shutit.send('gem install prawn-svg --version 0.21.0')
 		shutit.send('gem install asciidoctor slim thread_safe')
 		shutit.send('gem install --pre asciidoctor-pdf')
-		shutit.send('gem install coderay pygments.rb')
+		shutit.send('gem install coderay pygments.rb',check_exit=False)
 		shutit.send('git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git')
 		shutit.send('git clone git://github.com/hakimel/reveal.js.git')
 
