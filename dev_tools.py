@@ -31,11 +31,6 @@ class dev_tools(ShutItModule):
 		shutit.send('cd -')
 		# learn, for wget-finder - to find files on the net
 		shutit.send('git clone https://github.com/chilicuil/learn')
-		# j2
-		shutit.send('git clone https://github.com/rupa/z')
-		shutit.add_to_bashrc('. /home/imiell/z/z.sh')
-		shutit.add_to_bashrc('alias python=ptpython')
-		shutit.logout()
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
 		# CPAN requires a re-login
