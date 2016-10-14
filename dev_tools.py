@@ -15,7 +15,7 @@ class dev_tools(ShutItModule):
 		shutit.send('mkdir -p /space && chmod 777 /space')
 		shutit.login(user='imiell')
 		# dotfiles
-		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
+		shutit.send('git clone --depth=1 https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
 		shutit.send('cd ~/.dotfiles')
 		#shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
 		shutit.send('script/bootstrap',expect='What is your github author name')
@@ -25,16 +25,16 @@ class dev_tools(ShutItModule):
 		shutit.send('cd -')
 		shutit.logout()
 		# ttygif
-		shutit.send('git clone https://github.com/icholy/ttygif.git')
+		shutit.send('git clone --depth=1 https://github.com/icholy/ttygif.git')
 		shutit.send('cd ttygif')
 		#shutit.send('cp ttygif /usr/bin')
 		#shutit.send('cp concat.sh /usr/bin')
 		shutit.send('make install')
 		shutit.send('cd -')
 		# learn, for wget-finder - to find files on the net
-		shutit.send('git clone https://github.com/chilicuil/learn')
+		shutit.send('git clone --depth=1 https://github.com/chilicuil/learn')
 		# j2
-		shutit.send('git clone https://github.com/rupa/z')
+		shutit.send('git clone --depth=1 https://github.com/rupa/z')
 		shutit.add_to_bashrc('. /home/imiell/z/z.sh')
 		shutit.add_to_bashrc('alias python=ptpython')
 		# CPAN
@@ -67,8 +67,8 @@ class dev_tools(ShutItModule):
 		shutit.send('gem install asciidoctor slim thread_safe')
 		shutit.send('gem install --pre asciidoctor-pdf')
 		shutit.send('gem install coderay pygments.rb',check_exit=False)
-		shutit.send('git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git')
-		shutit.send('git clone git://github.com/hakimel/reveal.js.git')
+		shutit.send('git clone --depth=1 git://github.com/asciidoctor/asciidoctor-reveal.js.git')
+		shutit.send('git clone --depth=1 git://github.com/hakimel/reveal.js.git')
 
 		return True
 
