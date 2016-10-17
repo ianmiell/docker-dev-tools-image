@@ -12,12 +12,10 @@ class dev_tools(ShutItModule):
 		shutit.install('git')
 		shutit.send('groupadd -g 1000 imiell')
 		shutit.send('useradd -d /home/imiell -s /bin/bash -m imiell -u 1000 -g 1000')
-		shutit.login(user='imiell')
-		# dotfiles
-		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
-		shutit.send('cd ~/.dotfiles')
-		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
-		shutit.send('cd -')
+		# CPAN requires a re-login
+		shutit.login(command='su -')
+		shutit.send('cpan install Graph::Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
+		shutit.logout()
 		# q text as data (csv to sql)
 		shutit.send('wget https://github.com/harelba/packages-for-q/raw/master/deb/q-text-as-data_1.5.0-1_all.deb')
 		shutit.send('dpkg -i q-text-as-data_1.5.0-1_all.deb')
@@ -33,10 +31,6 @@ class dev_tools(ShutItModule):
 		shutit.send('git clone https://github.com/chilicuil/learn')
 		# CPAN
 		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
-		# CPAN requires a re-login
-		shutit.login(command='su -')
-		shutit.send('cpan install Graph::Easy') # Allows rendering of graphs as text files: http://search.cpan.org/~tels/Graph-Easy/bin/graph-easy
-		shutit.logout()
 		shutit.send('wget -qO- https://search.maven.org/remote_content?g=com.madgag&a=bfg&v=LATEST > bfg.jar')
 		# pips
 		shutit.send('pip install awscli')
@@ -55,8 +49,17 @@ class dev_tools(ShutItModule):
 
 		# Asciidoc-pdf reveal
 		shutit.send('gem install asciidoctor slim thread_safe')
+
+		# imiell user
+		shutit.login(user='imiell')
+		# dotfiles
+		shutit.send('git clone https://github.com/ianmiell/dotfiles.git ~/.dotfiles')
+		shutit.send('cd ~/.dotfiles')
+		shutit.multisend('script/bootstrap',{'What is your github author name':'Ian Miell','What is your github author email':'ian.miell@gmail.com','verwrite all':'O'})
+		shutit.send('cd -')
 		shutit.send('git clone git://github.com/asciidoctor/asciidoctor-reveal.js.git')
 		shutit.send('git clone git://github.com/hakimel/reveal.js.git')
+		shutit.logout()
 		return True
 
 	def get_config(self, shutit):
@@ -65,9 +68,9 @@ class dev_tools(ShutItModule):
 
 	def finalize(self, shutit):
 		shutit.install('manpages man-db')
-		shutit.send('updatedb')
 		shutit.send('apt-file update')
 		shutit.send('apt-get clean')
+		shutit.send('updatedb')
 		return True
 
 def module():
