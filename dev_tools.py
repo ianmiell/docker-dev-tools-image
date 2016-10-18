@@ -40,7 +40,13 @@ class dev_tools(ShutItModule):
 		# learn, for wget-finder - to find files on the net
 		shutit.send('git clone --depth=1 https://github.com/chilicuil/learn')
 		# CPAN
-		shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
+		#shutit.multisend('cpan',{'Would you like to configure as much as possible automatically':'','What approach do you want':'','Would you like me to automatically choose some CPAN mirror':'','Would you like me to append that to /home/imiell/.bashrc now':'','cpan.1.>':'exit'})
+		shutit.send('cpan',expect='Would you like to configure as much as possible automatically')
+		shutit.send('',expect='What approach do you want')
+		shutit.send('',expect='Would you like me to automatically choose some CPAN mirror')
+		shutit.send('',expect='Would you like me to append that to /home/imiell/.bashrc now')
+		shutit.send('',expect='cpan.1.>')
+		shutit.send('exit')
 		shutit.send('wget -qO- https://search.maven.org/remote_content?g=com.madgag&a=bfg&v=LATEST > bfg.jar')
 		# pips
 		shutit.send('pip install awscli')
